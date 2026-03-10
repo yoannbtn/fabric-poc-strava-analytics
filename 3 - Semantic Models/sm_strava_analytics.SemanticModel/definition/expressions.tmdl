@@ -1,0 +1,11 @@
+expression 'DirectLake - lh_dp600_se' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/30f64b62-7548-4676-bc43-b5a2cd4af01d/a3ece0f3-09f5-4890-aa41-0a3f456d5502", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: a704266f-25f4-45f9-96f3-c1852e1acd30
+
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[stg_strava_activities]"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[stg_strava_gears]"}},"objectType":"Table"}]
+

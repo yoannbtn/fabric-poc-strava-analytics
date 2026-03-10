@@ -1,0 +1,189 @@
+table dim_calendar
+	lineageTag: e477c418-fa1c-4089-b3db-31ea8ec0bfbd
+	sourceLineageTag: [dbo].[dim_calendar]
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 0315bc4c-e7e9-4e44-9e7b-0058544c26d5
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = DataType
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column MonthKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e0461ee4-8102-480a-b64d-86c9d281926f
+		sourceLineageTag: MonthKey
+		summarizeBy: count
+		sourceColumn: MonthKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f65c609-8f38-43a7-b536-b1b7fee90fb5
+		sourceLineageTag: Year
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		lineageTag: 6c1b6748-7542-435a-979a-5425238fb4af
+		sourceLineageTag: MonthName
+		summarizeBy: none
+		sourceColumn: MonthName
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayName
+		dataType: string
+		lineageTag: b9307c2d-e27a-4935-b9c2-ab452f8a27bf
+		sourceLineageTag: DayName
+		summarizeBy: none
+		sourceColumn: DayName
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrentMonth
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 619c3205-f455-4b01-a9f4-432f0cf2f497
+		sourceLineageTag: IsCurrentMonth
+		summarizeBy: none
+		sourceColumn: IsCurrentMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 7059f3a9-6af3-4ccd-ad79-066868abedae
+		sourceLineageTag: MonthNumber
+		summarizeBy: sum
+		sourceColumn: MonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		lineageTag: 21a92efd-c992-4c86-90e8-8e43a1f4c6e2
+		sourceLineageTag: Quarter
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterYear
+		dataType: string
+		lineageTag: 419de821-cc90-4d89-85d8-f3c09caafee9
+		sourceLineageTag: QuarterYear
+		summarizeBy: none
+		sourceColumn: QuarterYear
+		sortByColumn: QuarterKey
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthYear
+		dataType: string
+		lineageTag: b879ebaf-4e8f-41d5-9bf3-287a6be47b19
+		sourceLineageTag: MonthYear
+		summarizeBy: none
+		sourceColumn: MonthYear
+		sortByColumn: MonthKey
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: fbffc266-a51c-4b80-8497-da330bce99bb
+		sourceLineageTag: WeekNumber
+		summarizeBy: sum
+		sourceColumn: WeekNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeekNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 790106b5-ebd5-4db2-b237-a657502277e5
+		sourceLineageTag: DayOfWeekNumber
+		summarizeBy: sum
+		sourceColumn: DayOfWeekNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWeekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 35d55966-1e98-4db6-84c2-4986685be2ec
+		sourceLineageTag: IsWeekend
+		summarizeBy: none
+		sourceColumn: IsWeekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1f7479b8-3d5c-49f4-9bd9-72b5a3c79911
+		sourceLineageTag: QuarterKey
+		summarizeBy: count
+		sourceColumn: QuarterKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekYear
+		dataType: string
+		lineageTag: 9de71e04-ffd2-4c4e-abf2-892ac9056a31
+		sourceLineageTag: WeekYear
+		summarizeBy: none
+		sourceColumn: WeekYear
+		sortByColumn: WeekKey
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bb3e648e-baf2-46a6-a507-35717a002ad9
+		sourceLineageTag: WeekKey
+		summarizeBy: count
+		sourceColumn: WeekKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_calendar = entity
+		mode: directLake
+		source
+			entityName: dim_calendar
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_dp600_se'
+

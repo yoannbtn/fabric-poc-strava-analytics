@@ -1,0 +1,48 @@
+table dim_snapshot
+	lineageTag: a85a35ba-76ff-48bb-a2f7-72d406e30de2
+	sourceLineageTag: [dbo].[dim_snapshot]
+
+	column SnapshotMonthKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 6cd1e29a-b9bb-4315-ab65-4ed34eff3acd
+		sourceLineageTag: SnapshotMonthKey
+		summarizeBy: count
+		sourceColumn: SnapshotMonthKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnapshotType
+		dataType: string
+		lineageTag: acaf70b2-7129-4c46-8958-8060f9fb9007
+		sourceLineageTag: SnapshotType
+		summarizeBy: none
+		sourceColumn: SnapshotType
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnapshotID
+		dataType: string
+		lineageTag: 6332e053-9060-4fca-af90-290638c9cd7c
+		sourceLineageTag: SnapshotID
+		summarizeBy: none
+		sourceColumn: SnapshotID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnapshotLabel
+		dataType: string
+		lineageTag: 9af5ba75-d97b-44ab-b0ca-e95b478f633c
+		sourceLineageTag: SnapshotLabel
+		summarizeBy: none
+		sourceColumn: SnapshotLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_snapshot = entity
+		mode: directLake
+		source
+			entityName: dim_snapshot
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_dp600_se'
+

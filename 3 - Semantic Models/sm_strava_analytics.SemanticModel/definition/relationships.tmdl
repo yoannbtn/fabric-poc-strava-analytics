@@ -1,0 +1,24 @@
+relationship 87cff294-0e66-6af1-2713-cebb31f3a123
+	fromColumn: fct_activities.GearID
+	toColumn: dim_gears.GearID
+
+relationship 1944b9d9-e6f7-fa3d-859a-0540ab21e7e6
+	fromColumn: fct_gears.GearID
+	toColumn: dim_gears.GearID
+
+relationship 492a28f1-7ef7-a681-8224-ccc2657ffa03
+	fromColumn: fct_activities.SnapshotID
+	toColumn: dim_snapshot.SnapshotID
+
+relationship aec347c7-dcb9-a34d-0aed-61ce974ed904
+	fromColumn: fct_gears.IngestedDate
+	toColumn: dim_calendar.Date
+
+relationship a4a434b4-a87b-1a46-464a-399430546b31
+	fromColumn: fct_activities.ActivityDate
+	toColumn: dim_calendar.Date
+
+relationship 83e420f7-828f-c456-0823-732f1ed177f6
+	fromColumn: fct_gears.SnapshotID
+	toColumn: dim_snapshot.SnapshotID
+

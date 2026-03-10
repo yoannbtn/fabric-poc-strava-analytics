@@ -1,0 +1,69 @@
+table dim_gears
+	lineageTag: 5484ae47-7719-4750-ad22-925840d54224
+	sourceLineageTag: [dbo].[dim_gears]
+
+	column GearID
+		dataType: string
+		lineageTag: 5ed3bd5d-a609-4905-b3f4-b20e5a503374
+		sourceLineageTag: GearID
+		summarizeBy: none
+		sourceColumn: GearID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		dataType: string
+		lineageTag: c4bcc9cd-3680-4b81-a5f2-d3b6484c1082
+		sourceLineageTag: Brand
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column Model
+		dataType: string
+		lineageTag: 52ac7c45-7519-44b8-91a4-8ec1a40ff2e1
+		sourceLineageTag: Model
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column GearName
+		dataType: string
+		lineageTag: b8699fcd-e24d-4e86-aff2-ce20491b76a9
+		sourceLineageTag: GearName
+		summarizeBy: none
+		sourceColumn: GearName
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPrimary
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c8debd2a-2297-402e-ba2b-f85b938cc144
+		sourceLineageTag: IsPrimary
+		summarizeBy: none
+		sourceColumn: IsPrimary
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsRetired
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 32b95892-d824-424a-9b92-705126e40218
+		sourceLineageTag: IsRetired
+		summarizeBy: none
+		sourceColumn: IsRetired
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_gears = entity
+		mode: directLake
+		source
+			entityName: dim_gears
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_dp600_se'
+

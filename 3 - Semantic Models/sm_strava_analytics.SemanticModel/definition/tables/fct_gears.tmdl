@@ -1,0 +1,96 @@
+table fct_gears
+	lineageTag: e7672d3f-0b8a-495c-a008-ab7b797fed90
+	sourceLineageTag: [dbo].[fct_gears]
+
+	column GearID
+		dataType: string
+		isHidden
+		lineageTag: 0b8619a6-0482-453e-b521-0e3039077f60
+		sourceLineageTag: GearID
+		summarizeBy: none
+		sourceColumn: GearID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Distance_km
+		dataType: double
+		lineageTag: c0b1531c-871c-41d1-8c3d-4db05b3bda5f
+		sourceLineageTag: Distance_km
+		summarizeBy: sum
+		sourceColumn: Distance_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Weight_kg
+		dataType: double
+		lineageTag: de7220e7-6292-4d1f-aebd-125e63797edf
+		sourceLineageTag: Weight_kg
+		summarizeBy: sum
+		sourceColumn: Weight_kg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SnapshotMonthKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4c2cb7ca-97e2-416e-b53f-680a6122e74f
+		sourceLineageTag: SnapshotMonthKey
+		summarizeBy: count
+		sourceColumn: SnapshotMonthKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnapshotType
+		dataType: string
+		isHidden
+		lineageTag: 59948d7a-6fb9-41d6-b860-15fa1c9e706b
+		sourceLineageTag: SnapshotType
+		summarizeBy: none
+		sourceColumn: SnapshotType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnapshotID
+		dataType: string
+		isHidden
+		lineageTag: 0ade4959-fefd-4c71-aa8d-5f6febb1b532
+		sourceLineageTag: SnapshotID
+		summarizeBy: none
+		sourceColumn: SnapshotID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column IngestedDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 956e7e2d-0548-4bcd-96df-a28c32f3f9ba
+		sourceLineageTag: IngestedDate
+		summarizeBy: none
+		sourceColumn: IngestedDate
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition fct_gears = entity
+		mode: directLake
+		source
+			entityName: fct_gears
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_dp600_se'
+

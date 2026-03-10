@@ -1,0 +1,156 @@
+table core_measures
+	lineageTag: 560cfe4e-78c2-4b33-9d95-2934b8a17222
+
+	measure 'Activities Count' = COUNT ( fct_activities[ActivityID] )
+		formatString: # ##0 "activités"
+		displayFolder: _Activities\_Counts
+		lineageTag: 7723e63c-dd87-4fa7-bb5c-7250386cea55
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gears Count' = COUNT ( dim_gears[GearID] )
+		formatString: # ##0 "équipements"
+		displayFolder: _Gears\Counts
+		lineageTag: 9cc8e935-52dc-4ae6-821e-196698bf8f30
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Activities Total Distance (km)' = SUM ( fct_activities[Distance_km] )
+		formatString: " # ##0.0 ""km"""
+		displayFolder: _Activities\_Totals
+		lineageTag: 283842cc-fefe-41d6-8f03-f42dc7de3c6c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Activities Total Elevation Gain (m)' = SUM ( fct_activities[ElevationGain_m] )
+		formatString: " # ##0 ""m"""
+		displayFolder: _Activities\_Totals
+		lineageTag: a780926b-df60-4084-99dd-319aa4b8d92b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Activities Total Moving Time (min)' = SUM ( fct_activities[MovingTime_min] )
+		formatString: # ##0 "min"
+		displayFolder: _Activities\_Totals
+		lineageTag: 87556744-9834-47d2-9970-0c4d5d3c1950
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Activities Average Distance (km)' = AVERAGE ( fct_activities[Distance_km] )
+		formatString: # ##0.0 "km"
+		displayFolder: _Activities\_Averages
+		lineageTag: b6f0bf66-b84f-49aa-98cf-fffb6215d071
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Activities Average Elevation Gain (m)' = AVERAGE ( fct_activities[ElevationGain_m] )
+		formatString: " # ##0 ""m"""
+		displayFolder: _Activities\_Averages
+		lineageTag: 2248e8e6-9605-405e-8577-332837d4e953
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Activities Average Moving Time (min)' = AVERAGE ( fct_activities[MovingTime_min] )
+		formatString: " # ##0 ""min"""
+		displayFolder: _Activities\_Averages
+		lineageTag: 0ce045a3-8319-4670-9594-d55b968e30ba
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Activities Average Heart Rate' = AVERAGE ( fct_activities[AvgHeartRate] )
+		formatString: " 0 ""bpm"""
+		displayFolder: _Activities\_Averages
+		lineageTag: 5c9bd232-bed3-42c0-82c3-d88dd7f72352
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Activities Average Power (W)' = AVERAGE ( fct_activities[AvgPower] )
+		formatString: " # ##0 ""W"""
+		displayFolder: _Activities\_Averages
+		lineageTag: 162a4743-09de-410d-a664-619c5756bee1
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Activities Average Max Hear Rate' = AVERAGE ( fct_activities[MaxHeartRate] )
+		formatString: " 0 ""bpm"""
+		displayFolder: _Activities\_Averages
+		lineageTag: c53c22e9-1a6c-4b5d-91d9-77a1b0da529c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Activities Average VAM (m/h)' = AVERAGE ( fct_activities[VAM_mh] )
+		formatString: " # ##0 ""m/h"""
+		displayFolder: _Activities\_Averages
+		lineageTag: 703d89aa-0d38-420f-b0ee-e99d1c408d3b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Activities Average Run Pace (min/km)' = ```
+			
+			DIVIDE (
+			    [Activities Total Moving Time (min)], 
+			    [Activities Total Distance (km)], 
+			    0
+			)
+			```
+		displayFolder: _Activities\_Averages
+		lineageTag: 20e24a8a-5aea-4877-bfbb-eb8f254da43d
+
+		formatStringDefinition =
+				VAR CurrentPace = [Activities Average Run Pace (min/km)]
+				RETURN
+				    IF (
+				        ISBLANK ( CurrentPace ) || CurrentPace <= 0,
+				        "0:00 min/km",
+				        VAR TotalSeconds = CurrentPace * 60
+				        VAR Minutes = INT ( DIVIDE ( TotalSeconds, 60 ) )
+				        VAR Seconds = ROUND ( MOD ( TotalSeconds, 60 ), 0 )
+				        RETURN
+				            FORMAT ( Minutes, "0" ) & ":" & FORMAT ( Seconds, "00" ) & " min/km"
+				    )
+
+	measure 'Activities Average Speed (km/h)' = ```
+			
+			DIVIDE (
+			    [Activities Total Distance (km)], 
+			    [Activities Total Moving Time (min)] / 60, 
+			    0
+			)
+			```
+		formatString: " 0.0 ""km/h"""
+		displayFolder: _Activities\_Averages
+		lineageTag: 72c89510-7738-4f71-a059-830731b83856
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Activities Total Moving Time (h min)' =
+			
+			VAR TotalMinutes = [Activities Total Moving Time (min)]
+			VAR Hours = INT ( TotalMinutes / 60 )
+			VAR Minutes = MOD ( TotalMinutes, 60 )
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        Hours > 0, FORMAT ( Hours, "0" ) & "h " & FORMAT ( Minutes, "00" ) & "min",
+			        Minutes > 0, FORMAT ( Minutes, "0" ) & "min",
+			        BLANK ()
+			    )
+		displayFolder: _Activities\_Totals
+		lineageTag: 303d37b2-544a-4918-aa77-ba276115acef
+
+	column 'CORE MEASURES TABLE'
+		isHidden
+		formatString: 0
+		lineageTag: fc47d4a1-f3a3-4864-9251-666516275646
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [CORE MEASURES TABLE]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition core_measures = calculated
+		mode: import
+		source = ROW ( "CORE MEASURES TABLE", 1 )
+
+	annotation PBI_Id = 0d830a20d1e54164a2089363fd433e7f
+

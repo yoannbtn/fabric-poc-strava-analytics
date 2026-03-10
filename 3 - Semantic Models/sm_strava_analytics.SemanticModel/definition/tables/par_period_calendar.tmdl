@@ -1,0 +1,51 @@
+table par_period_calendar
+	lineageTag: acda0897-fe7c-4ef9-9ff9-540979708e79
+
+	column par_period_calendar
+		lineageTag: 767d0973-d932-4e7c-829b-de562e52e531
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'par_period_calendar Order'
+
+		relatedColumnDetails
+			groupByColumn: 'par_period_calendar Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'par_period_calendar Fields'
+		isHidden
+		lineageTag: 84b38620-1964-4208-a4c1-2bfd3ebd3307
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'par_period_calendar Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'par_period_calendar Order'
+		isHidden
+		formatString: 0
+		lineageTag: a597f3ab-efb2-4a46-9f62-5fc6258cdeba
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition par_period_calendar = calculated
+		mode: import
+		source =
+				{
+				    ("Year", NAMEOF('dim_calendar'[Year]), 0),
+				    ("Quarter", NAMEOF('dim_calendar'[QuarterYear]), 1),
+				    ("Month", NAMEOF('dim_calendar'[MonthYear]), 2),
+				    ("Week", NAMEOF('dim_calendar'[WeekYear]), 3),
+				    ("Date", NAMEOF('dim_calendar'[Date]), 4)
+				}
+
+	annotation PBI_Id = fcf654435e844771a001e2f5f35d01c4
+

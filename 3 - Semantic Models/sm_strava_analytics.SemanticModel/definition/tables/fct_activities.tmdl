@@ -1,0 +1,226 @@
+table fct_activities
+	lineageTag: 536f1f9f-6127-4e6f-b49c-d6ec147cd5e1
+	sourceLineageTag: [dbo].[fct_activities]
+
+	column SnapshotActivityKey
+		dataType: string
+		isHidden
+		lineageTag: 67a702fe-8743-4a80-b8d9-7c68771b384d
+		sourceLineageTag: SnapshotActivityKey
+		summarizeBy: none
+		sourceColumn: SnapshotActivityKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActivityID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 86d833ca-dff3-488f-903b-07c00ef7853f
+		sourceLineageTag: ActivityID
+		summarizeBy: count
+		sourceColumn: ActivityID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnapshotType
+		dataType: string
+		isHidden
+		lineageTag: 32a34e12-2569-4f4c-baf6-e8bbf0ac871a
+		sourceLineageTag: SnapshotType
+		summarizeBy: none
+		sourceColumn: SnapshotType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnapshotMonthKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4d0bec0f-fe66-49fa-9702-5a9dbe464579
+		sourceLineageTag: SnapshotMonthKey
+		summarizeBy: count
+		sourceColumn: SnapshotMonthKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActivityName
+		dataType: string
+		lineageTag: 4d515f66-b737-4868-8de8-09bcb5bf94df
+		sourceLineageTag: ActivityName
+		summarizeBy: none
+		sourceColumn: ActivityName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SportType
+		dataType: string
+		lineageTag: e76c1c70-eb42-4e3c-b93c-0536643becf3
+		sourceLineageTag: SportType
+		summarizeBy: none
+		sourceColumn: SportType
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCommute
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b1620a7a-1d77-4f9c-8dc4-6ecdbe9072d1
+		sourceLineageTag: IsCommute
+		summarizeBy: none
+		sourceColumn: IsCommute
+
+		annotation SummarizationSetBy = Automatic
+
+	column Distance_km
+		dataType: double
+		lineageTag: 13c0ce3d-c294-4484-be39-1a5c619f83b1
+		sourceLineageTag: Distance_km
+		summarizeBy: sum
+		sourceColumn: Distance_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MovingTime_min
+		dataType: double
+		lineageTag: a87b27d9-3cad-4660-a0cc-87c211935d37
+		sourceLineageTag: MovingTime_min
+		summarizeBy: sum
+		sourceColumn: MovingTime_min
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ElevationGain_m
+		dataType: double
+		lineageTag: 374febe8-0a41-4ba1-a997-c70ae18a166b
+		sourceLineageTag: ElevationGain_m
+		summarizeBy: sum
+		sourceColumn: ElevationGain_m
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VAM_mh
+		dataType: double
+		lineageTag: 8ff5b0d3-859c-43a4-884f-cfb50a61ae2c
+		sourceLineageTag: VAM_mh
+		summarizeBy: sum
+		sourceColumn: VAM_mh
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AvgHeartRate
+		dataType: double
+		lineageTag: 5ad8bf51-94db-4cd1-bdc4-9cf6b7ce2c83
+		sourceLineageTag: AvgHeartRate
+		summarizeBy: sum
+		sourceColumn: AvgHeartRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MaxHeartRate
+		dataType: double
+		lineageTag: ab8e5509-fc16-4d99-9eac-80195202f74a
+		sourceLineageTag: MaxHeartRate
+		summarizeBy: sum
+		sourceColumn: MaxHeartRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AvgPower
+		dataType: double
+		lineageTag: 65ad4105-f982-4d6e-89e4-11d0d45d9269
+		sourceLineageTag: AvgPower
+		summarizeBy: sum
+		sourceColumn: AvgPower
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GearID
+		dataType: string
+		isHidden
+		lineageTag: bd12da5d-db38-441d-a9bc-1814ba0a7735
+		sourceLineageTag: GearID
+		summarizeBy: none
+		sourceColumn: GearID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Device
+		dataType: string
+		lineageTag: 4843243b-3add-4293-ad90-9ed5ecae17f1
+		sourceLineageTag: Device
+		summarizeBy: none
+		sourceColumn: Device
+
+		annotation SummarizationSetBy = Automatic
+
+	column SnapshotID
+		dataType: string
+		isHidden
+		lineageTag: 20ef9a97-1512-4ad1-a023-932a0e5625e9
+		sourceLineageTag: SnapshotID
+		summarizeBy: none
+		sourceColumn: SnapshotID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ActivityDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0d49108d-3d8f-492b-bcc2-bd8fcc836ccf
+		sourceLineageTag: ActivityDate
+		summarizeBy: none
+		sourceColumn: ActivityDate
+
+		changedProperty = FormatString
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column SportCategory
+		dataType: string
+		lineageTag: 083e4451-3c87-4fa4-9c54-36bd0fbbe49c
+		sourceLineageTag: SportCategory
+		summarizeBy: none
+		sourceColumn: SportCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fct_activities = entity
+		mode: directLake
+		source
+			entityName: fct_activities
+			schemaName: dbo
+			expressionSource: 'DirectLake - lh_dp600_se'
+

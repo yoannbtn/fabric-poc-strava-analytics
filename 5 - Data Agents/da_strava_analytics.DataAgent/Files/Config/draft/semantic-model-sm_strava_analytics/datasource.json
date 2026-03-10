@@ -1,0 +1,570 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "2adee161-5ac9-a1fa-4ee4-7fa1d5aa4c81",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": null,
+  "displayName": "sm_strava_analytics",
+  "type": "semantic_model",
+  "userDescription": null,
+  "metadata": {},
+  "elements": [
+    {
+      "id": "560cfe4e-78c2-4b33-9d95-2934b8a17222",
+      "is_selected": true,
+      "display_name": "core_measures",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "b6f0bf66-b84f-49aa-98cf-fffb6215d071",
+          "is_selected": true,
+          "display_name": "Activities Average Distance (km)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "2248e8e6-9605-405e-8577-332837d4e953",
+          "is_selected": true,
+          "display_name": "Activities Average Elevation Gain (m)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5c9bd232-bed3-42c0-82c3-d88dd7f72352",
+          "is_selected": true,
+          "display_name": "Activities Average Heart Rate",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c53c22e9-1a6c-4b5d-91d9-77a1b0da529c",
+          "is_selected": true,
+          "display_name": "Activities Average Max Hear Rate",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "0ce045a3-8319-4670-9594-d55b968e30ba",
+          "is_selected": true,
+          "display_name": "Activities Average Moving Time (min)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "162a4743-09de-410d-a664-619c5756bee1",
+          "is_selected": true,
+          "display_name": "Activities Average Power (W)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "20e24a8a-5aea-4877-bfbb-eb8f254da43d",
+          "is_selected": true,
+          "display_name": "Activities Average Run Pace (min/km)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "72c89510-7738-4f71-a059-830731b83856",
+          "is_selected": true,
+          "display_name": "Activities Average Speed (km/h)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "703d89aa-0d38-420f-b0ee-e99d1c408d3b",
+          "is_selected": true,
+          "display_name": "Activities Average VAM (m/h)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7723e63c-dd87-4fa7-bb5c-7250386cea55",
+          "is_selected": true,
+          "display_name": "Activities Count",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "283842cc-fefe-41d6-8f03-f42dc7de3c6c",
+          "is_selected": true,
+          "display_name": "Activities Total Distance (km)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a780926b-df60-4084-99dd-319aa4b8d92b",
+          "is_selected": true,
+          "display_name": "Activities Total Elevation Gain (m)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "303d37b2-544a-4918-aa77-ba276115acef",
+          "is_selected": true,
+          "display_name": "Activities Total Moving Time (h min)",
+          "type": "semantic_model.measure",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "87556744-9834-47d2-9970-0c4d5d3c1950",
+          "is_selected": true,
+          "display_name": "Activities Total Moving Time (min)",
+          "type": "semantic_model.measure",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9cc8e935-52dc-4ae6-821e-196698bf8f30",
+          "is_selected": true,
+          "display_name": "Gears Count",
+          "type": "semantic_model.measure",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "e477c418-fa1c-4089-b3db-31ea8ec0bfbd",
+      "is_selected": true,
+      "display_name": "dim_calendar",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "0315bc4c-e7e9-4e44-9e7b-0058544c26d5",
+          "is_selected": true,
+          "display_name": "Date",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b9307c2d-e27a-4935-b9c2-ab452f8a27bf",
+          "is_selected": true,
+          "display_name": "DayName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "790106b5-ebd5-4db2-b237-a657502277e5",
+          "is_selected": true,
+          "display_name": "DayOfWeekNumber",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "619c3205-f455-4b01-a9f4-432f0cf2f497",
+          "is_selected": true,
+          "display_name": "IsCurrentMonth",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "35d55966-1e98-4db6-84c2-4986685be2ec",
+          "is_selected": true,
+          "display_name": "IsWeekend",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6c1b6748-7542-435a-979a-5425238fb4af",
+          "is_selected": true,
+          "display_name": "MonthName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "7059f3a9-6af3-4ccd-ad79-066868abedae",
+          "is_selected": true,
+          "display_name": "MonthNumber",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b879ebaf-4e8f-41d5-9bf3-287a6be47b19",
+          "is_selected": true,
+          "display_name": "MonthYear",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "21a92efd-c992-4c86-90e8-8e43a1f4c6e2",
+          "is_selected": true,
+          "display_name": "Quarter",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "419de821-cc90-4d89-85d8-f3c09caafee9",
+          "is_selected": true,
+          "display_name": "QuarterYear",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "fbffc266-a51c-4b80-8497-da330bce99bb",
+          "is_selected": true,
+          "display_name": "WeekNumber",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9de71e04-ffd2-4c4e-abf2-892ac9056a31",
+          "is_selected": true,
+          "display_name": "WeekYear",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5f65c609-8f38-43a7-b536-b1b7fee90fb5",
+          "is_selected": true,
+          "display_name": "Year",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "5484ae47-7719-4750-ad22-925840d54224",
+      "is_selected": true,
+      "display_name": "dim_gears",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "c4bcc9cd-3680-4b81-a5f2-d3b6484c1082",
+          "is_selected": true,
+          "display_name": "Brand",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5ed3bd5d-a609-4905-b3f4-b20e5a503374",
+          "is_selected": true,
+          "display_name": "GearID",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b8699fcd-e24d-4e86-aff2-ce20491b76a9",
+          "is_selected": true,
+          "display_name": "GearName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "c8debd2a-2297-402e-ba2b-f85b938cc144",
+          "is_selected": true,
+          "display_name": "IsPrimary",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "32b95892-d824-424a-9b92-705126e40218",
+          "is_selected": true,
+          "display_name": "IsRetired",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "52ac7c45-7519-44b8-91a4-8ec1a40ff2e1",
+          "is_selected": true,
+          "display_name": "Model",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "a85a35ba-76ff-48bb-a2f7-72d406e30de2",
+      "is_selected": true,
+      "display_name": "dim_snapshot",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "6332e053-9060-4fca-af90-290638c9cd7c",
+          "is_selected": true,
+          "display_name": "SnapshotID",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "9af5ba75-d97b-44ab-b0ca-e95b478f633c",
+          "is_selected": true,
+          "display_name": "SnapshotLabel",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "6cd1e29a-b9bb-4315-ab65-4ed34eff3acd",
+          "is_selected": true,
+          "display_name": "SnapshotMonthKey",
+          "type": "semantic_model.column",
+          "data_type": "Int64",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "acaf70b2-7129-4c46-8958-8060f9fb9007",
+          "is_selected": true,
+          "display_name": "SnapshotType",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "536f1f9f-6127-4e6f-b49c-d6ec147cd5e1",
+      "is_selected": true,
+      "display_name": "fct_activities",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "0d49108d-3d8f-492b-bcc2-bd8fcc836ccf",
+          "is_selected": true,
+          "display_name": "ActivityDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4d515f66-b737-4868-8de8-09bcb5bf94df",
+          "is_selected": true,
+          "display_name": "ActivityName",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "5ad8bf51-94db-4cd1-bdc4-9cf6b7ce2c83",
+          "is_selected": true,
+          "display_name": "AvgHeartRate",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "65ad4105-f982-4d6e-89e4-11d0d45d9269",
+          "is_selected": true,
+          "display_name": "AvgPower",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "4843243b-3add-4293-ad90-9ed5ecae17f1",
+          "is_selected": true,
+          "display_name": "Device",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "13c0ce3d-c294-4484-be39-1a5c619f83b1",
+          "is_selected": true,
+          "display_name": "Distance_km",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "374febe8-0a41-4ba1-a997-c70ae18a166b",
+          "is_selected": true,
+          "display_name": "ElevationGain_m",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "b1620a7a-1d77-4f9c-8dc4-6ecdbe9072d1",
+          "is_selected": true,
+          "display_name": "IsCommute",
+          "type": "semantic_model.column",
+          "data_type": "Boolean",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "ab8e5509-fc16-4d99-9eac-80195202f74a",
+          "is_selected": true,
+          "display_name": "MaxHeartRate",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "a87b27d9-3cad-4660-a0cc-87c211935d37",
+          "is_selected": true,
+          "display_name": "MovingTime_min",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "083e4451-3c87-4fa4-9c54-36bd0fbbe49c",
+          "is_selected": true,
+          "display_name": "SportCategory",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "e76c1c70-eb42-4e3c-b93c-0536643becf3",
+          "is_selected": true,
+          "display_name": "SportType",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "8ff5b0d3-859c-43a4-884f-cfb50a61ae2c",
+          "is_selected": true,
+          "display_name": "VAM_mh",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "e7672d3f-0b8a-495c-a008-ab7b797fed90",
+      "is_selected": true,
+      "display_name": "fct_gears",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "c0b1531c-871c-41d1-8c3d-4db05b3bda5f",
+          "is_selected": true,
+          "display_name": "Distance_km",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "956e7e2d-0548-4bcd-96df-a28c32f3f9ba",
+          "is_selected": true,
+          "display_name": "IngestedDate",
+          "type": "semantic_model.column",
+          "data_type": "DateTime",
+          "description": null,
+          "children": []
+        },
+        {
+          "id": "de7220e7-6292-4d1f-aebd-125e63797edf",
+          "is_selected": true,
+          "display_name": "Weight_kg",
+          "type": "semantic_model.column",
+          "data_type": "Double",
+          "description": null,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "acda0897-fe7c-4ef9-9ff9-540979708e79",
+      "is_selected": true,
+      "display_name": "par_period_calendar",
+      "type": "semantic_model.table",
+      "description": null,
+      "children": [
+        {
+          "id": "767d0973-d932-4e7c-829b-de562e52e531",
+          "is_selected": true,
+          "display_name": "par_period_calendar",
+          "type": "semantic_model.column",
+          "data_type": "String",
+          "description": null,
+          "children": []
+        }
+      ]
+    }
+  ]
+}
